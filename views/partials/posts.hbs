@@ -1,0 +1,27 @@
+<div class="posts">
+    <div class="row justify-content-center">
+        {{#each posts}}
+        <div class="col-lg-7" style="margin-top: 50px;">
+            <div class="card">
+
+                <img src="{{this.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Posted by {{this.author}}</h5>
+
+                    {{#if this.comments}}
+                    <ul class="list-group">
+                        {{#each this.comments}}
+                        <li class="list-group-item">{{getShortComment this}}</li>
+                        {{/each}}
+                    </ul>
+                    {{else}}
+                    <ul class="list-group">
+                        <li class="list-group-item">Be first to comment on this post</li>
+                    </ul>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
